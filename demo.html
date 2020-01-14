@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>learn vue</title>
+</head>
+
+<body>
+    <div id="app">
+        <p v-if="toggle">{{msg1}}</p>
+        <p v-if="!toggle">{{msg2}}</p>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                msg1: "落霞与孤鹜齐飞，秋水共长天一色",
+                msg2: "渔舟唱晚，响穷彭蠡之滨；雁阵惊寒，声断衡阳之浦。",
+                toggle: true,
+            }
+        })
+    </script>
+
+</body>
+
+</html>
