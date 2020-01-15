@@ -6,25 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>learn vue</title>
+
 </head>
 
 <body>
     <div id="app">
-        <input type="text" v-model="msg">{{msg}}
+        <p v-bind:style="[cssData,cssData2]">王雨波</p>
     </div>
     <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
     <script>
         let vm = new Vue({
             el: "#app",
             data: {
-                msg: "",
-                toggle: '',
-            },
-            watch: {
-                msg: function(newMsg) {
-                    console.log(typeof newMsg, newMsg);
+                cssData: {
+                    fontSize: 48 + "px",
+                },
+                cssData2: {
+                    color: 'red',
                 }
-            }
+            },
+
         })
     </script>
 
