@@ -11,21 +11,25 @@
 
 <body>
     <div id="app">
-        <p v-bind:style="[cssData,cssData2]">王雨波</p>
+        <button v-on:click="handleClick" v-on:mouseenter="handleMouseenter">点击/移入</button>
     </div>
     <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
     <script>
         let vm = new Vue({
             el: "#app",
             data: {
-                cssData: {
-                    fontSize: 48 + "px",
-                },
-                cssData2: {
-                    color: 'red',
+                person: {
+                    name: "王雨波"
                 }
             },
-
+            methods: {
+                handleClick(e) {
+                    console.log("点击事件", e);
+                },
+                handleMouseenter() {
+                    console.log("鼠标移入");
+                }
+            },
         })
     </script>
 
