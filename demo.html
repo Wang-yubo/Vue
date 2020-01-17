@@ -11,25 +11,41 @@
 
 <body>
     <div id="app">
-        <button v-on:click="handleClick" v-on:mouseenter="handleMouseenter">点击/移入</button>
+        <son :message1="msg1" :message2="msg2"></son>
+
     </div>
+    <template id="test">
+    <div>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </div>
+</template>
+
     <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
     <script>
+        let son = {
+            template: '#test',
+            props: {
+                message1: {
+                    required:
+                },
+                message2: {
+                    type: Number,
+                }
+            }
+        }
         let vm = new Vue({
             el: "#app",
             data: {
-                person: {
-                    name: "王雨波"
-                }
+                msg1: "我是第一条数据",
+                msg2: 2,
             },
-            methods: {
-                handleClick(e) {
-                    console.log("点击事件", e);
-                },
-                handleMouseenter() {
-                    console.log("鼠标移入");
-                }
-            },
+            components: {
+                son,
+            }
         })
     </script>
 

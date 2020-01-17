@@ -100,3 +100,49 @@
 
 > 此时所有value为假的项全部不渲染
 
+##### 5.1 v-for 中key的使用
+
+> 没有使用key时
+
+```html
+ <ul>
+            <li v-for="(item,index) of arr">
+                {{item}}----<input />
+            </li>
+        </ul>
+        <button @click="handleClick">随机顺序</button>
+```
+
+```js
+ data: {
+                arr: [1, 2, 3, 4, 5]
+            },
+            methods: {
+                handleClick() {
+                    this.arr.sort(() => {
+                        return Math.random() - 0.5
+                    })
+                }
+            }
+```
+
+> 没有点击按钮之前：
+
+![image-20200117151553714](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200117151553714.png)
+
+> 点击按钮以后：
+
+![image-20200117151634502](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200117151634502.png)
+
+> - 从结构中可以看出，每个item和后面的input都是在分别在同一个`li`节点里面的。
+> - 现在把arr随机以后，只有遍历出来的item值的位置发生了改变，input的位置没有改变，可是他们原本又同属于一个`li`节点里面。
+> - 那如何让input的位置随着item的值一起变化呢？或者说如何让每条`li`里面的所有节点随着item位置的变化而随着改变呢？
+
+> 这时候就需要使用key值动态绑定了
+
+```html
+ <li v-for="(item,index) of arr" :key="item">
+```
+
+![image-20200117152313444](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200117152313444.png)
+
