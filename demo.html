@@ -11,41 +11,35 @@
 
 <body>
     <div id="app">
-        <son :message1="msg1" :message2="msg2"></son>
-
+        <son></son>
     </div>
     <template id="test">
     <div>
-        <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-        </ul>
+      我是子组件
     </div>
 </template>
 
     <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
     <script>
-        let son = {
+        // let son = {
+        //     template: '#test',
+        //     data() {
+        //         return {
+        //             name: '我是子组件中的数据'
+        //         }
+        //     },
+        //     methods: {
+        //         handleClick() { //点击按钮把子组件data选项中的数据传递给父组件
+        //             this.$emit('xxx', this.name) //向父组件发射xxx事件
+        //         }
+        //     }
+        // }
+        Vue.component('son', {
             template: '#test',
-            props: {
-                message1: {
-                    required:
-                },
-                message2: {
-                    type: Number,
-                }
-            }
-        }
+        })
         let vm = new Vue({
             el: "#app",
-            data: {
-                msg1: "我是第一条数据",
-                msg2: 2,
-            },
-            components: {
-                son,
-            }
+            data: {},
         })
     </script>
 

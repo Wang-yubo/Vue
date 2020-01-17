@@ -148,9 +148,117 @@ let son = {
 
 > 数据虽然还有, 但是报错了, 第一条数据不符合格式
 
-> 子组件中能做出的限制和反映 : 
+> 子组件中能做出的验证 : 
 >
-> default>>>当没有传递数据时生效, 可以当成默认传递的数据
+> - default>>>当没有传递数据时生效, 可以当成默认传递的数据
 >
 > ![image-20200117170905481](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200117170905481.png)
+>
+> -  required: true>>>表示必须要传, 不传报错
+>
+> ![image-20200117171901148](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200117171901148.png)
+>
+> `type>>>type可以规定传入的值是哪一种类型或者是那些类型, 两种及其以上就要用数组规定: type:[String,Number]`
+>
+> - `validator(value){return}`>>>验证条件
+>
+> ```js
+>  message2: {
+>                     validator(value) {
+>                         return value > 10
+>                     }
+> ```
+>
+> ![image-20200117174122698](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200117174122698.png)
+>
+> 程序报错,但是数据仍然传过来了
+>
+> ![image-20200117174205600](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200117174205600.png)
+>
+> emmm......只能解释为父爱真伟大了,就算是错的也要给
+
+##### 8.4 父子组件传值--子传父
+
+> 方法:`this.$emit`
+
+> 步骤:定义子组件中要发送的内容>>>给子组件绑定点击发送的事件并且在子组件的方法中写上事件处理函数>>>在父组件中绑定子组件要发射过来事件,等待子组件的发射>>>在父组件的方法中写上子组件发射的事件的处理函数
+
+```html
+ <div id="app">
+     <!--第三步:父组件中绑定子组件发射的事件 -->
+        <son @xxx="handleClick"></son>    
+</div>
+    <template id="test">
+    <div>
+      我是子组件
+         <!--第二步:子组件中定义发射事件  -->
+      <button @click="handleClick">点击传值</button>
+    </div>
+</template>
+```
+
+```js
+ <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+    <script>
+        let son = {
+            template: '#test',
+            data() {
+                return {
+                    name: '我是子组件中的数据'//第一步:定义要传递的数据
+                }
+            },
+            methods: {//这里也算第二步:发射事件的处理函数
+                handleClick() { //点击按钮把子组件data选项中的数据传递给父组件
+                    this.$emit('xxx', this.name) //向父组件发射xxx(表示自定义)事件
+                }
+            }
+        }
+        let vm = new Vue({
+            el: "#app",
+            data: {
+
+            },
+            components: {
+                son,
+            },
+            methods: {//第四步:写上父组件绑定的子组件发射事件的处理函数
+                handleClick(value) {//该事件第一个值就是发射的数据,用value接收
+                    console.log('事件触发了', value);
+
+                }
+            }
+        })
+    </script>
+
+```
+
+> 点击一次按钮
+
+![image-20200117194530659](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200117194530659.png)
+
+##### 8.5 全局组件和局部组件
+
+> - 局部组件就是必须挂载到父组件中才可以使用的组件, 上面所有的例子中用的都是局部组件
+> - 全局组件是不用挂载到父组件中就可以使用的组件
+
+> 下面是全局组件的写法: 
+
+```js
+ Vue.component('son', {
+            template: '#test',
+        })
+```
+
+> 第一个参数是存放子组件的变量名, 第二个参数是一个对象, 里面放子组件需要的属性和方法
+
+```js
+ let vm = new Vue({
+            el: "#app",
+            data: {},
+        })
+```
+
+> 父组件没有挂载子组件, 子组件也可以使用
+
+![image-20200117200031813](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200117200031813.png)
 
