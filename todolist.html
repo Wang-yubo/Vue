@@ -19,7 +19,7 @@
             </div>
             <div class="panel-body">
                 <ul class="list-group">
-                    <li class="list-group-item" v-for="(todo,index) of things">
+                    <li class="list-group-item" v-for="(todo,index) of filterTodos">
                         <input type="checkbox" v-model="todo.isSelected">
                         <input type="text" :value="todo.thing">
                         <button class="btn btn-danger btn-xs glyphicon glyphicon-remove-circle pull-right" @click="handleDelete(index)"></button></li>
@@ -28,9 +28,9 @@
             </div>
             <div class="panel-footer  ">
                 <ul class="nav nav-pills">
-                    <li role="presentation" class="active"><a href="#">全部任务</a></li>
-                    <li role="presentation"><a href="#">已完成</a></li>
-                    <li role="presentation"><a href="#">未完成</a></li>
+                    <li role="presentation" :class="{active:hash=='#all'}"><a href="#all">全部任务</a></li>
+                    <li role="presentation" :class="{active:hash=='#finish'}"><a href="#finish">已完成</a></li>
+                    <li role="presentation" :class="{active:hash=='#unfinish'}"><a href="#unfinish">未完成</a></li>
                 </ul>
             </div>
         </div>
@@ -41,6 +41,8 @@
             el: '#app',
             data: {
                 task: '', //存储任务
+                task: '', //存储任务,默认为all
+                hash: '#all', //存储hash值
                 things: [{
                     isSelected: false,
                     thing: "学习",
@@ -65,11 +67,31 @@
                 }
             },
             computed: {
+                //对未完成任务的计数
                 num() {
                     return this.things.filter((todo) => {
                         return todo.isSelected === false
                     }).length
+                },
+                filterTodos() {
+                    //如果地址栏的hash值是finish,要找出所有isSelected为true的数组成员
+                    //如果地址栏的hash值是finish,要找出所有isSelected为true的数组成员
+                    //如果地址栏的hash值是all,则直接返回原数组
+                    if (this.hash === '#finish') {
+                        return this.things.filter(todo => todo.isSelected)
+                    }
+                    if (this.hash === '#unfinish') {
+                        return this.things.filter(todo => !todo.isSelected)
+                    }
+                    return this.things
+
                 }
+            },
+            created() {
+                //监听hash值的变化
+                window.addEventListener('hashchange', () => {
+                    this.hash = window.location.hash
+                })
             },
         })
     </script>
