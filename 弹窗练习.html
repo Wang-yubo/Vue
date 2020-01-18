@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>learn vue</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .zhezhao {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, .5);
+        }
+        
+        .huihua {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: white;
+            width: 400px;
+            height: 400px;
+        }
+        
+        .huihua button {
+            position: absolute;
+            right: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <button @click="handClick">点击弹窗</button>
+        <zhezhao v-show="isShow" @xxx="close"></zhezhao>
+    </div>
+    <template id="test">
+    <div class="zhezhao">
+        <div class="huihua">
+            <button @click="handClick">关闭弹窗</button>
+        </div>
+    </div>
+</template>
+
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+    <script>
+        let zhezhao = {
+            template: '#test',
+            methods: {
+                handClick() {
+                    this.$emit('xxx')
+                }
+            },
+        }
+        let vm = new Vue({
+            el: "#app",
+            data: {
+                isShow: false,
+            },
+            components: {
+                zhezhao,
+            },
+            methods: {
+                handClick() {
+                    this.isShow = true
+                },
+                close() {
+                    this.isShow = false
+                }
+            },
+        })
+    </script>
+
+</body>
+
+</html>
