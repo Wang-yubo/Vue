@@ -4,6 +4,8 @@
 
 ##### 3.1 v-model
 
+> v-model指令用来在input、select、text、checkbox、radio等表单控件元素上创建双向数据绑定。根据控件类型v-mode1自动选取正确的方法更新元素。
+
 ```js
 <div id="app">
         <input type="text" v-model="msg1">
@@ -284,6 +286,16 @@ toggle: "赵雷"
 ![image-20200115175108237](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115175108237.png)
 
 > 手动定义value的话是string，不然是布尔值
+
+> 小结 : 
+>
+> - v-model 会忽略所有表单元素的 value、checked、selected 特性的初始值而总是将 Vue 实例的数据作为数据来源
+> - v-model 在内部为不同的输入元素使用不同的属性并抛出不同的事件：
+>
+>
+> 1. text 和 textarea 元素使用 value 属性和 input 事件；
+> 2. checkbox 和 radio 使用 checked 属性和 change 事件；
+> 3. select 字段将 value 作为 prop 并将 change 作为事件。
 
 ###### 3.1.1`v-model.lazy`
 
