@@ -1,5 +1,7 @@
 ### 08. Vue组件的知识
 
+> 组件是可复用的 Vue 实例，且带有一个名字,会把HTML相关的代码直接整合到实例对象中,可以实现,一个实例多处
+
 ##### 8.1 组件使用步骤
 
 > 1. 定义组件
@@ -48,7 +50,7 @@
 
 > 最终的结果
 
-![image-20200117160122166](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200117160122166.png)
+![image-20200117160122166](F:\learn Vue\images\image-20200117160122166.png)
 
 ##### 8.2 子组件中的data
 
@@ -69,22 +71,23 @@ let son = {
 
 > 在Vue开发工具中查看子组件data的返回值
 
-<img src="C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200117161603702.png" alt="image-20200117161603702" style="zoom:67%;" />
+<img src="F:\learn Vue\images\image-20200117161603702.png" alt="image-20200117161603702" style="zoom:67%;" />
 
 > 复用同一子组件时，某一个子组件中data数据的修改不会改变其他子组件
 
 > 修改第一个子组件的name
 
-<img src="C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200117163210925.png" alt="image-20200117163210925" style="zoom: 67%;" />
+<img src="F:\learn Vue\images\image-20200117163210925.png" alt="image-20200117163210925" style="zoom: 67%;" />
 
 > 第二个子组件的name没有改变
 
-<img src="C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200117163143185.png" alt="image-20200117163143185" style="zoom:67%;" />
+<img src="F:\learn Vue\images\image-20200117163143185.png" alt="image-20200117163143185" style="zoom:67%;" />
 
 ##### 8.3 父子组件传值--父传子
 
 > - 属性传值法
 > - props是子组件用来接收父组件传值的接口
+> - props 是你可以在组件上注册的一些自定义特性。当一个值传递给一个 prop 特性的时候，它就变成了那个组件实例的一个属性。一个组件默认可以拥有任意数量的 prop，任何值都可以传递给任何 prop。
 
 > 这是父组件中要传给子组件的信息
 
@@ -109,7 +112,7 @@ let son = {
 
 > 查看结果
 
-<img src="C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200117164630141.png" alt="image-20200117164630141" style="zoom: 67%;" />
+<img src="F:\learn Vue\images\image-20200117164630141.png" alt="image-20200117164630141" style="zoom: 67%;" />
 
 > - 用数组接收表示对接收的数据不做任何修改
 > - 如果要对传入的数据进行筛选,就需要用到对象格式
@@ -142,9 +145,9 @@ let son = {
             }
 ```
 
-<img src="C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200117170326495.png" alt="image-20200117170326495" style="zoom:67%;" />
+<img src="F:\learn Vue\images\image-20200117170326495.png" alt="image-20200117170326495" style="zoom:67%;" />
 
-![image-20200117170336183](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200117170336183.png)
+![image-20200117170336183](F:\learn Vue\images\image-20200117170336183.png)
 
 > 数据虽然还有, 但是报错了, 第一条数据不符合格式
 
@@ -152,11 +155,11 @@ let son = {
 >
 > - default>>>当没有传递数据时生效, 可以当成默认传递的数据
 >
-> ![image-20200117170905481](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200117170905481.png)
+> ![image-20200117170905481](F:\learn Vue\images\image-20200117170905481.png)
 >
 > -  required: true>>>表示必须要传, 不传报错
 >
-> ![image-20200117171901148](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200117171901148.png)
+> ![image-20200117171901148](F:\learn Vue\images\image-20200117171901148.png)
 >
 > `type>>>type可以规定传入的值是哪一种类型或者是那些类型, 两种及其以上就要用数组规定: type:[String,Number]`
 >
@@ -169,11 +172,11 @@ let son = {
 >                     }
 > ```
 >
-> ![image-20200117174122698](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200117174122698.png)
+> ![image-20200117174122698](F:\learn Vue\images\image-20200117174122698.png)
 >
 > 程序报错,但是数据仍然传过来了
 >
-> ![image-20200117174205600](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200117174205600.png)
+> ![image-20200117174205600](F:\learn Vue\images\image-20200117174205600.png)
 >
 > emmm......只能解释为父爱真伟大了,就算是错的也要给
 
@@ -234,7 +237,7 @@ let son = {
 
 > 点击一次按钮
 
-![image-20200117194530659](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200117194530659.png)
+![image-20200117194530659](F:\learn Vue\images\image-20200117194530659.png)
 
 ##### 8.5 全局组件和局部组件
 
@@ -260,7 +263,7 @@ let son = {
 
 > 父组件没有挂载子组件, 子组件也可以使用
 
-![image-20200117200031813](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200117200031813.png)
+![image-20200117200031813](F:\learn Vue\images\image-20200117200031813.png)
 
 ##### 8.6  组件注册之组件名称要求
 
@@ -280,4 +283,30 @@ let son = {
 > 当使用`PascalCase`定义一个组件时,你在引用这个自定义元素时两种命名法都可以使用 , 也就是说<my-component-name>和<MyCompentonName>都是可以接受的.
 >
 > 注意:尽管如此, 直接在DOM(即非字符串模板)中使用时只有`kabab-case`是有效的
+
+##### 8.7 动态组件
+
+> 有的时候，在不同组件之间进行动态切换是非常有用的，比如在一个新闻网站实现多新闻内容选项卡,可以通过 Vue 的 <component> 元素加一个特殊的 is 特性来实现：
+
+> 动态选项卡示例:
+
+> 定义三个组件模板
+
+<img src="F:\前端开发\learn canvas\images\image-20200121221154519.png" alt="image-20200121221154519" style="zoom:80%;" />
+
+> 实例化并且挂载组件模板
+
+<img src="F:\前端开发\learn canvas\images\image-20200121221253317.png" alt="image-20200121221253317" style="zoom:80%;" />
+
+> 设置数据, 完成切换的事件处理函数, 之所以写在computed属性里面是因为每个组件名前要加 `tab-` 前缀
+
+<img src="F:\前端开发\learn canvas\images\image-20200121221517960.png" alt="image-20200121221517960" style="zoom:80%;" />
+
+> 完成动态组件的绑定
+
+![image-20200121221707362](F:\前端开发\learn canvas\images\image-20200121221707362.png)
+
+> 效果: 
+
+![](F:\learn Vue\images\选项卡.gif)
 

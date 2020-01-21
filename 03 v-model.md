@@ -21,12 +21,12 @@
     </script>
 ```
 
-![image-20200115152020583](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115152020583.png)
+![image-20200115152020583](F:\learn Vue\images\image-20200115152020583.png)
 
 > - 我们现在可以看出，input里面没有value值，本来应该显示为空，但是我们设置了v-model把msg1绑定给input之后，input的value就变成了msg1
 > - 并且，此时再设置value="关山难越"，仍然不会改变input框里的值
 
-![image-20200115152249058](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115152249058.png)
+![image-20200115152249058](F:\learn Vue\images\image-20200115152249058.png)
 
 > 虽然再设置的value值不会显示在input框之中，但是value值仍在input元素里
 
@@ -36,7 +36,7 @@
 <input type="text" v-model="msg1" value="关山难越">{{msg1}}
 ```
 
-![image-20200115153208106](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115153208106.png)
+![image-20200115153208106](F:\learn Vue\images\image-20200115153208106.png)
 
 > 以上就是数据双向绑定中，vmodel的改变对view的改变
 
@@ -48,7 +48,7 @@
 
 > 需要注意的是v-model只绑定表单元素有效，对div，p等标签会报错
 
-![image-20200115155132680](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115155132680.png)
+![image-20200115155132680](F:\learn Vue\images\image-20200115155132680.png)
 
 > 其他需要注意的点：
 >
@@ -77,11 +77,11 @@
 
 > 此时，CheckBox为true，勾上
 
-![image-20200115161002769](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115161002769.png)
+![image-20200115161002769](F:\learn Vue\images\image-20200115161002769.png)
 
 > 点击一下true，取消勾上，结果变成了false
 
-![image-20200115161050769](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115161050769.png)
+![image-20200115161050769](F:\learn Vue\images\image-20200115161050769.png)
 
 > 其中逻辑是，在checkbox中只有true or false两种状态，点击会改变状态，而绑定了v-model之后，view将改变了的状态传给vmodel，覆盖了原本的true or false，所以实现了点击改变状态。
 
@@ -91,23 +91,23 @@
 toggle: "王雨波",
 ```
 
-![image-20200115161622577](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115161622577.png)
+![image-20200115161622577](F:\learn Vue\images\image-20200115161622577.png)
 
 > 点击CheckBox一次：
 
-![image-20200115161644655](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115161644655.png)
+![image-20200115161644655](F:\learn Vue\images\image-20200115161644655.png)
 
 > 点击CheckBox二次：
 
-![image-20200115161705294](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115161705294.png)
+![image-20200115161705294](F:\learn Vue\images\image-20200115161705294.png)
 
 > 点击CheckBox三次：
 
-![image-20200115161749982](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115161749982.png)
+![image-20200115161749982](F:\learn Vue\images\image-20200115161749982.png)
 
 > 点击CheckBox四次：
 
-![image-20200115161802287](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115161802287.png)
+![image-20200115161802287](F:\learn Vue\images\image-20200115161802287.png)
 
 > 除了初始值是字符串“王雨波”之外，后面显示的只有true or false 了。其中的逻辑仍然和上面的一样
 
@@ -149,13 +149,13 @@ toggle: "王雨波",
 
 > 现在的多选框是这样的：
 
-<img src="C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115164212212.png" alt="image-20200115164212212" style="zoom:50%;" />
+<img src="F:\learn Vue\images\image-20200115164212212.png" alt="image-20200115164212212" style="zoom:50%;" />
 
 > 勾上前两个，并且在控制台查看`vm.toggle`
 
-<img src="C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115164317641.png" alt="image-20200115164317641" style="zoom:50%;" />
+<img src="F:\learn Vue\images\image-20200115164317641.png" alt="image-20200115164317641" style="zoom:50%;" />
 
-![image-20200115164332570](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115164332570.png)
+![image-20200115164332570](F:\learn Vue\images\image-20200115164332570.png)
 
 > 这样就可以分别勾选了
 >
@@ -191,11 +191,11 @@ toggle: "王雨波",
 
 
 
-<img src="C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115165712143.png" alt="image-20200115165712143" style="zoom:50%;" />
+<img src="F:\learn Vue\images\image-20200115165712143.png" alt="image-20200115165712143" style="zoom:50%;" />
 
 > 查看此时`vm.toggle`
 
-![image-20200115165737173](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115165737173.png)
+![image-20200115165737173](F:\learn Vue\images\image-20200115165737173.png)
 
 > 他居然把value值给传进数组了，而不是传入布尔值
 >
@@ -207,15 +207,15 @@ toggle: "王雨波",
  toggle: ["赵雷"],
 ```
 
-<img src="C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115170713419.png" alt="image-20200115170713419" style="zoom:50%;" />
+<img src="F:\learn Vue\images\image-20200115170713419.png" alt="image-20200115170713419" style="zoom:50%;" />
 
 > 现在再试试把复选框改成单选框：默认没有选中状态
 
-<img src="C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115171253460.png" alt="image-20200115171253460" style="zoom:50%;" />
+<img src="F:\learn Vue\images\image-20200115171253460.png" alt="image-20200115171253460" style="zoom:50%;" />
 
 > 点击李荣浩，查看`vm.toggle`：
 
-![image-20200115171335039](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115171335039.png)
+![image-20200115171335039](F:\learn Vue\images\image-20200115171335039.png)
 
 > 现在变成了，点击那个选项，就把那个值传入`vm.toggle`
 
@@ -225,7 +225,7 @@ toggle: "王雨波",
 toggle: ["赵雷"]
 ```
 
-<img src="C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115172153621.png" alt="image-20200115172153621" style="zoom:50%;" />
+<img src="F:\learn Vue\images\image-20200115172153621.png" alt="image-20200115172153621" style="zoom:50%;" />
 
 > 没有选中赵雷这个选项，没有效果，为什么呢？
 >
@@ -235,7 +235,7 @@ toggle: ["赵雷"]
 toggle: "赵雷"
 ```
 
-<img src="C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115172650745.png" alt="image-20200115172650745" style="zoom:50%;" />
+<img src="F:\learn Vue\images\image-20200115172650745.png" alt="image-20200115172650745" style="zoom:50%;" />
 
 > 为什么这样可以呢？我们可以监测一下，toggle值的变化：
 
@@ -247,7 +247,7 @@ toggle: "赵雷"
             }
 ```
 
-![image-20200115173129473](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115173129473.png)
+![image-20200115173129473](F:\learn Vue\images\image-20200115173129473.png)
 
 > 从结果来看，toggle是一个字符串类型的值，每次选中一个都会把相应的值传给toggle，所以现在预存一个字符串类型的value就相当于给了他一个结果，自然可以选中了。
 
@@ -275,15 +275,15 @@ toggle: "赵雷"
 
 > 没点击的时候：
 
-![image-20200115175005490](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115175005490.png)
+![image-20200115175005490](F:\learn Vue\images\image-20200115175005490.png)
 
 > 点击一次：
 
-<img src="C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115175046357.png" alt="image-20200115175046357"  />
+<img src="F:\learn Vue\images\image-20200115175046357.png" alt="image-20200115175046357"  />
 
 > 点击二次：
 
-![image-20200115175108237](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115175108237.png)
+![image-20200115175108237](F:\learn Vue\images\image-20200115175108237.png)
 
 > 手动定义value的话是string，不然是布尔值
 
@@ -326,7 +326,7 @@ toggle: "赵雷"
     </script>
 ```
 
-![image-20200115191401646](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115191401646.png)
+![image-20200115191401646](F:\learn Vue\images\image-20200115191401646.png)
 
 > 现在使用`v-model.number`
 
@@ -334,15 +334,15 @@ toggle: "赵雷"
   <input type="text" v-model.number="msg">{{msg}}
 ```
 
-![image-20200115191510347](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115191510347.png)
+![image-20200115191510347](F:\learn Vue\images\image-20200115191510347.png)
 
 > 当然输入其他的还是字符串类型
 
-![image-20200115191614804](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115191614804.png)
+![image-20200115191614804](F:\learn Vue\images\image-20200115191614804.png)
 
 > 在`v-model.number`的前提下，先输入数字，后面再输入字符串无效
 
-![image-20200115191736024](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115191736024.png)
+![image-20200115191736024](F:\learn Vue\images\image-20200115191736024.png)
 
 ###### 3.1.3 v-model.trim
 
@@ -350,8 +350,8 @@ toggle: "赵雷"
 
 > 在文本框里面先输入几个空格，再跟上字符串
 
-![image-20200115192218136](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115192218136.png)
+![image-20200115192218136](F:\learn Vue\images\image-20200115192218136.png)
 
 > 鼠标点击文本框外，字符串自动剔除前面空格回到最前面
 
-![image-20200115192345544](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200115192345544.png)
+![image-20200115192345544](F:\learn Vue\images\image-20200115192345544.png)
