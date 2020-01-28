@@ -10,51 +10,17 @@
 
 <body>
     <div id="app">
-        <button v-for="tab of tabs" @click="currentTab = tab">{{tab}}</button>
-        <component :is="currentComponent"></component>
+        {{name}}
     </div>
-    <template id="tab-home">
-        <div>
-           我是选项卡的主页内容
-        </div>
-    </template>
-    <template id="tab-news">
-        <div>
-           我是选项卡的新闻内容
-        </div>
-    </template>
-    <template id="tab-imgs">
-        <div>
-           我是选项卡的图片内容
-        </div>
-    </template>
     <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
     <script>
-        let tabHome = {
-            template: '#tab-home',
-        }
-        let tabNews = {
-            template: '#tab-news',
-        }
-        let tabImgs = {
-            template: '#tab-imgs',
-        }
+        let data = {
+            name: "王雨波",
+            sex: "男"
+        };
         let vm = new Vue({
-            el: '#app',
-            components: {
-                tabHome,
-                tabNews,
-                tabImgs
-            },
-            data: {
-                currentTab: "home",
-                tabs: ["home", "news", "imgs"]
-            },
-            computed: {
-                currentComponent() {
-                    return 'tab-' + this.currentTab
-                }
-            },
+            el: "#app",
+            data: data
         })
     </script>
 </body>

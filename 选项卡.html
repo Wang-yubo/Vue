@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <button v-for="tab of tabs" @click="currentTab = tab">{{tab}}</button>
+        <component :is="currentComponent"></component>
+    </div>
+    <template id="tab-home">
+        <div>
+           我是选项卡的主页内容
+        </div>
+    </template>
+    <template id="tab-news">
+        <div>
+           我是选项卡的新闻内容
+        </div>
+    </template>
+    <template id="tab-imgs">
+        <div>
+           我是选项卡的图片内容
+        </div>
+    </template>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+    <script>
+        let tabHome = {
+            template: '#tab-home',
+        }
+        let tabNews = {
+            template: '#tab-news',
+        }
+        let tabImgs = {
+            template: '#tab-imgs',
+        }
+        let vm = new Vue({
+            el: '#app',
+            components: {
+                tabHome,
+                tabNews,
+                tabImgs
+            },
+            data: {
+                currentTab: "home",
+                tabs: ["home", "news", "imgs"]
+            },
+            computed: {
+                currentComponent() {
+                    return 'tab-' + this.currentTab
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>

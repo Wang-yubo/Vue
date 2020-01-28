@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://cdn.bootcss.com/animate.css/3.7.2/animate.css" rel="stylesheet">
+    <title>vue动画效果</title>
+</head>
+<style>
+    ul {
+        list-style: none;
+    }
+    
+    .list {
+        transition: 1s;
+    }
+</style>
+
+<body>
+    <div id="app">
+        <button @click="shuffle">点击乱序</button>
+        <transition-group tag="ul">
+            <li v-for="item of items" :key="item" class="list">{{item}}</li>
+        </transition-group>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+    <script>
+        let vm = new Vue({
+            el: '#app',
+            data: {
+                items: [1, 2, 3, 4, 5, 6, 7, 8, 9]
+            },
+            methods: {
+                shuffle() {
+                    this.items = _.shuffle(this.items)
+                }
+            },
+        })
+    </script>
+</body>
+
+</html>
