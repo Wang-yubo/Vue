@@ -10,30 +10,40 @@
 
 <body>
     <div id="app">
-        {{msg.msg1}}
+
     </div>
-    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
+    <script crossorigin="anonymous" integrity="sha384-9u9lzb/hr8e14GLHe5TEOrTiH3Qtw5DX2Zw9X/g7cqj81W2McEMx5CKOszxdb8jg" src="https://lib.baomitu.com/vue/2.6.10/vue.js"></script>
     <script>
-        let data = {
-            name: "王雨波",
-            sex: "男"
-        };
-        let vm = new Vue({
-            el: "#app",
-            data: {
-                msg: {
-                    msg1: "王",
-                    msg2: "雨",
-                    msg3: "波",
+        let mixData1 = {
+            data() {
+                return {
+                    name: "Wangyubo"
+                }
+            }
+        }
+        let mixData2 = {
+            data() {
+                return {
+                    name: "王雨波"
+                }
+            }
+        }
+        let mixMethods = {
+
+        }
+        let mixTemp = {
+            template: `<p>{{name}}--{{name}}</p>`,
+
+        }
+        let com = Vue.extend({
+            mixins: [mixData2, mixData1, mixTemp],
+            data() {
+                return {
+                    name: "你好世界"
                 }
             }
         })
-        let fn = vm.$watch("msg", function(newName, oldName) {
-            console.log("我监听到了");
-            fn()
-        }, {
-            deep: true,
-        })
+        new com().$mount("#app")
     </script>
 </body>
 
