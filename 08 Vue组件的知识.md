@@ -252,6 +252,25 @@ let son = {
         })
 ```
 
+>  一定要注意临时死区的问题:
+
+```html
+<div id="app">
+        <son></son>
+    </div>
+    <script crossorigin="anonymous" integrity="sha384-9u9lzb/hr8e14GLHe5TEOrTiH3Qtw5DX2Zw9X/g7cqj81W2McEMx5CKOszxdb8jg" src="https://lib.baomitu.com/vue/2.6.10/vue.js"></script>
+    <script>
+        let vm = new Vue({
+            el: "#app",
+        })
+        Vue.component("son", {})
+    </script>
+```
+
+![image-20200203163937072](F:\learn Vue\images\image-20200203163937072.png)
+
+> 把全局组件放在`new Vue()`的后面就会出现这个报错
+
 > 第一个参数是存放子组件的变量名, 第二个参数是一个对象, 里面放子组件需要的属性和方法
 
 ```js
