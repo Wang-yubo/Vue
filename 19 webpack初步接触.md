@@ -66,3 +66,62 @@
 >
 > <img src="F:\learn Vue\images\image-20200204224223634.png" alt="image-20200204224223634" style="zoom:50%;" />
 
+##### 19.1 webpack的配置文件webpack.config.js
+
+> 该文件一般在项目的根目录中创建 , 如果不创建 , 那么webpack将采取默认配置进行运作
+>
+> 引用node的path模块
+>
+> <img src="F:\learn Vue\images\image-20200205192519659.png" alt="image-20200205192519659" style="zoom:50%;" />
+>
+> 点击黄色小灯泡可以转换为es6语法
+>
+> <img src="F:\learn Vue\images\image-20200205192605164.png" alt="image-20200205192605164" style="zoom: 80%;" />
+>
+> 简单配置 :
+>
+> <img src="F:\learn Vue\images\image-20200205202346129.png" alt="image-20200205202346129" style="zoom:50%;" />
+>
+> 运行webpack
+>
+> ```nginx
+> λ npx webpack
+> ```
+>
+> <img src="F:\learn Vue\images\image-20200205202323389.png" alt="image-20200205202323389" style="zoom:50%;" />
+>
+> 打包好的文件夹
+>
+> ![image-20200205202527019](F:\learn Vue\images\image-20200205202527019.png)
+>
+> 引入
+>
+> <img src="F:\learn Vue\images\image-20200205202648047.png" alt="image-20200205202648047" style="zoom:50%;" />
+>
+> 效果
+>
+> ![image-20200205202720038](F:\learn Vue\images\image-20200205202720038.png)
+
+##### 19.2 package.json的script( 命令映射表)
+
+> - 命令映射表可以将一些复杂的命令行给进行简化 , 这样在开发者进行输入命令时 , 降低输入的复杂度
+> - webpack-cli , 就是给我们提供在命令行里面执行webpack指令的功能
+>
+> <img src="F:\learn Vue\images\image-20200205212833978.png" alt="image-20200205212833978" style="zoom:67%;" />
+>
+> <img src="F:\learn Vue\images\image-20200205213021719.png" alt="image-20200205213021719" style="zoom: 67%;" />
+
+##### 19.3 webpack的基本打包参数
+
+> ![image-20200205214740794](F:\learn Vue\images\image-20200205214740794.png)
+>
+> 配置开发模式 :
+>
+> ![image-20200205214855672](F:\learn Vue\images\image-20200205214855672.png)
+>
+> 选择开发模式以后 , 重新打包 , 找到输出文件
+>
+> ![image-20200205215129209](F:\learn Vue\images\image-20200205215129209.png)
+>
+> 现在就成了这个样子
+
