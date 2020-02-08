@@ -3,9 +3,16 @@ let htmlwebpackPlugin = require("html-webpack-plugin"); //引用插件
 let { CleanWebpackPlugin } = require("clean-webpack-plugin")
 module.exports = {
     mode: "development",
-    entry: "./src/js/index.js", //入口文件
+    devtool: "cheap-module-eval-source-map",
+    devServer: { //这个是我们自己临时搭建的一个服务器
+        contentBase: "./bundle", //服务器的根目录位置
+        open: true, //运行了npm run start指令之后,会自动帮我们打开浏览器
+        port: 9527, //自定义端口
+    },
+    entry: {
+        wangyubo: "./src/js/index.js",
+    },
     output: {
-        filename: "wangyubo.js", //打包后的文件名
         path: path.resolve(__dirname, "bundle") //打包成功后再当前文件夹下创建一个文件,名字叫做bundle
     },
     //配置处理图片的loader
