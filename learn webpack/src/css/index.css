@@ -1,0 +1,19 @@
+@import "./header.css";
+@import "/src/font/iconfont.css";
+p {
+    display: flex;
+    text-align: justify;
+    color: #bfc;
+    font-size: larger;
+}
+
+div {
+    color: aqua;
+    font-size: small;
+    text-align: center;
+    transform: scale(1.2);
+}
+
+img {
+    transform: rotateZ(15deg);
+}
