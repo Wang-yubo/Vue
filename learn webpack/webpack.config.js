@@ -1,6 +1,8 @@
 let path = require("path"); //引用node的path模块
 let htmlwebpackPlugin = require("html-webpack-plugin"); //引用插件
-let { CleanWebpackPlugin } = require("clean-webpack-plugin")
+let { CleanWebpackPlugin } = require("clean-webpack-plugin");
+let webpack = require("webpack"); //获取webpack插件的主函数
+
 module.exports = {
     mode: "development",
     devtool: "cheap-module-eval-source-map",
@@ -8,6 +10,8 @@ module.exports = {
         contentBase: "./bundle", //服务器的根目录位置
         open: true, //运行了npm run start指令之后,会自动帮我们打开浏览器
         port: 9527, //自定义端口
+        hot: true, //开启热模块更新包
+        hotOnly: true, //即使HMR不生效 ,浏览器也不会刷新
     },
     entry: {
         wangyubo: "./src/js/index.js",
@@ -50,12 +54,31 @@ module.exports = {
                     outputPath: "./font"
                 }
             }
+        }, {
+            test: /\.js$/,
+            exclude: /node_modules/, //忽视该文件
+            loader: "babel-loader",
+            options: {
+                plugins: [
+                    [
+                        "@babel/plugin-transform-runtime",
+                        {
+                            "absoluteRuntime": false,
+                            "corejs": 2,
+                            "helpers": true,
+                            "regenerator": true,
+                            "useESModules": false
+                        }
+                    ]
+                ]
+            }
         }]
     },
     plugins: [
         new htmlwebpackPlugin({
             template: "src/html/template.html"
         }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new webpack.HotModuleReplacementPlugin()
     ]
 }
