@@ -10,7 +10,7 @@
 > 1. `test`属性 , 用于标识出应该被对应的loader进行转换的某个或某些文件
 > 2. `use`属性 , 表示进行转换时 , 应用使用哪个loader
 >
-> ![image-20200205223349882](F:\learn Vue\images\image-20200205223349882.png)
+> ![image-20200205223349882](..\images\image-20200205223349882.png)
 >
 > 仅官方定义的loader就有几十个 , 每个loader的配置又有几十个 , 加上非官方的民间自定义或是企业提供的 , 成千上万个loader不是空话 , 所以不要想去把每个loader都记住
 
@@ -24,29 +24,29 @@
 >
 > 配置 :
 >
-> ![image-20200206150142982](F:\learn Vue\images\image-20200206150142982.png)
+> ![image-20200206150142982](..\images\image-20200206150142982.png)
 
 > 安装`file-loader`
 >
-> ![image-20200206134514321](F:\learn Vue\images\image-20200206134514321.png)
+> ![image-20200206134514321](..\images\image-20200206134514321.png)
 >
 > 更改的目录结构 :
 >
-> ![image-20200206150450891](F:\learn Vue\images\image-20200206150450891.png)
+> ![image-20200206150450891](..\images\image-20200206150450891.png)
 >
 > 更改index.js的代码 :
 >
-> ![image-20200206150832133](F:\learn Vue\images\image-20200206150832133.png)
+> ![image-20200206150832133](..\images\image-20200206150832133.png)
 >
 > 开始打包 :
 >
-> ![image-20200206141611827](F:\learn Vue\images\image-20200206141611827.png)
+> ![image-20200206141611827](..\images\image-20200206141611827.png)
 >
 > 打包后的文件 :
 >
-> ![image-20200206141649376](F:\learn Vue\images\image-20200206141649376.png)
+> ![image-20200206141649376](..\images\image-20200206141649376.png)
 >
-> ![image-20200206152416429](F:\learn Vue\images\image-20200206152416429.png)
+> ![image-20200206152416429](..\images\image-20200206152416429.png)
 >
 > 打包成功 , 图片文件成功的被打包了 , 默认情况下 ,生成的文件的文件名就是文件内容的MD5哈希值并会保留所引用资源的原始扩展名
 >
@@ -58,7 +58,7 @@
 
 ##### 20.2 file-loader的详细选项
 
-<img src="F:\learn Vue\images\image-20200206155049776.png" alt="image-20200206155049776" style="zoom:67%;" />
+<img src="..\images\image-20200206155049776.png" alt="image-20200206155049776" style="zoom:67%;" />
 
 | 名称            | 类型               | 默认值                  | 描述                                                         |
 | --------------- | ------------------ | ----------------------- | ------------------------------------------------------------ |
@@ -71,13 +71,13 @@
 
 > 常用的选项是`name` 和 `outputPath`
 >
-> <img src="F:\learn Vue\images\image-20200206160322149.png" alt="image-20200206160322149" style="zoom: 67%;" />
+> <img src="..\images\image-20200206160322149.png" alt="image-20200206160322149" style="zoom: 67%;" />
 >
-> ![image-20200206160352022](F:\learn Vue\images\image-20200206160352022.png)
+> ![image-20200206160352022](..\images\image-20200206160352022.png)
 >
 > 返回的路径也变了 :
 >
-> ![image-20200206160502596](F:\learn Vue\images\image-20200206160502596.png)
+> ![image-20200206160502596](..\images\image-20200206160502596.png)
 
 ##### 20.3 多个图片打包
 
@@ -85,20 +85,20 @@
 >
 > 解决办法>>>使用placeholder参数
 >
-> ![image-20200206162830882](F:\learn Vue\images\image-20200206162830882.png)
+> ![image-20200206162830882](..\images\image-20200206162830882.png)
 >
 > 准备多张图片>>>
 >
-> <img src="F:\learn Vue\images\image-20200206163220163.png" alt="image-20200206163220163" style="zoom:50%;" />
+> <img src="..\images\image-20200206163220163.png" alt="image-20200206163220163" style="zoom:50%;" />
 >
 > 配置>>>
 >
-> <img src="F:\learn Vue\images\image-20200206162912541.png" alt="image-20200206162912541" style="zoom:80%;" />
+> <img src="..\images\image-20200206162912541.png" alt="image-20200206162912541" style="zoom:80%;" />
 >
-> ![image-20200206163030795](F:\learn Vue\images\image-20200206163030795.png)
+> ![image-20200206163030795](..\images\image-20200206163030795.png)
 
 ##### 20.4 多格式文件的引入
 
 > 多格式文件的引入只需要修改一下正则就好了
 
-<img src="F:\learn Vue\images\image-20200206163612091.png" alt="image-20200206163612091" style="zoom:80%;" />
+<img src="..\images\image-20200206163612091.png" alt="image-20200206163612091" style="zoom:80%;" />

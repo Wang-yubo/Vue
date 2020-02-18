@@ -23,7 +23,7 @@
 
 > 移入并且点击一次
 
-![image-20200116202203766](F:\learn Vue\images\image-20200116202203766.png)
+![image-20200116202203766](..\images\image-20200116202203766.png)
 
 > 由于在Vue中经常使用v-on，所以Vue提供了v-on的缩写@
 >
@@ -37,7 +37,7 @@
  <button v-on:click="handleClick" v-on:mouseenter="handleMouseenter">点击/移入</button>
 ```
 
-![image-20200116202203766](F:\learn Vue\images\image-20200116202203766.png)
+![image-20200116202203766](..\images\image-20200116202203766.png)
 
 > 加括号：
 
@@ -45,7 +45,7 @@
  <button v-on:click="handleClick()" v-on:mouseenter="handleMouseenter()">点击/移入</button>
 ```
 
-![image-20200116202203766](F:\learn Vue\images\image-20200116202203766.png)
+![image-20200116202203766](..\images\image-20200116202203766.png)
 
 > 看起来加不加括号都一样，没什么区别
 >
@@ -59,13 +59,13 @@ handleClick(e) {
 
 > 我们给点击事件传入一个参数，
 
-![image-20200116202924140](F:\learn Vue\images\image-20200116202924140.png)
+![image-20200116202924140](..\images\image-20200116202924140.png)
 
 > 返回了一个事件对象
 
 > 如果我们加了括号又不传递参数：
 
-![image-20200117135632468](F:\learn Vue\images\image-20200117135632468.png)
+![image-20200117135632468](..\images\image-20200117135632468.png)
 
 > 那么返回一个undefined，意味着此时e不再是事件对象了，而是一个新的变量，不过由于我们没有传参，所以没有赋值，返回undefined
 
@@ -83,7 +83,7 @@ handleClick(e) {
                 },
 ```
 
-![image-20200117140425463](F:\learn Vue\images\image-20200117140425463.png)
+![image-20200117140425463](..\images\image-20200117140425463.png)
 
 > 此时就接收到了该事件对象
 

@@ -23,7 +23,7 @@
         new child().$mount("#app")
 ```
 
-![image-20200131205919944](F:\learn Vue\images\image-20200131205919944.png)
+![image-20200131205919944](..\images\image-20200131205919944.png)
 
 ##### 14.2 Vue的实例方法之mount
 
@@ -47,7 +47,7 @@
 > })
 > ```
 
-<img src="F:\learn Vue\images\image-20200201151047197.png" alt="image-20200201151047197" style="zoom:67%;" />
+<img src="..\images\image-20200201151047197.png" alt="image-20200201151047197"  />
 
 ##### 14.4 vue的实例方法之nextTick
 
@@ -110,3 +110,4 @@
 > 这个方法主要用于避开Vue不能检测到属性被删除的限制 , 一般很少使用到它
 >
 > 这是全局 Vue.delete 的别名。`vm.$delete( target, propertyName/index )`
+

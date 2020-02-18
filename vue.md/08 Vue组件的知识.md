@@ -50,7 +50,7 @@
 
 > 最终的结果
 
-![image-20200117160122166](F:\learn Vue\images\image-20200117160122166.png)
+![image-20200117160122166](..\images\image-20200117160122166.png)
 
 ##### 8.2 子组件中的data
 
@@ -71,17 +71,17 @@ let son = {
 
 > 在Vue开发工具中查看子组件data的返回值
 
-<img src="F:\learn Vue\images\image-20200117161603702.png" alt="image-20200117161603702" style="zoom:67%;" />
+<img src="..\images\image-20200117161603702.png" alt="image-20200117161603702" style="zoom:67%;" />
 
 > 复用同一子组件时，某一个子组件中data数据的修改不会改变其他子组件
 
 > 修改第一个子组件的name
 
-<img src="F:\learn Vue\images\image-20200117163210925.png" alt="image-20200117163210925" style="zoom: 67%;" />
+<img src="..\images\image-20200117163210925.png" alt="image-20200117163210925" style="zoom: 80%;" />
 
 > 第二个子组件的name没有改变
 
-<img src="F:\learn Vue\images\image-20200117163143185.png" alt="image-20200117163143185" style="zoom:67%;" />
+<img src="..\images\image-20200117163143185.png" alt="image-20200117163143185" style="zoom: 80%;" />
 
 ##### 8.3 父子组件传值--父传子
 
@@ -112,7 +112,7 @@ let son = {
 
 > 查看结果
 
-<img src="F:\learn Vue\images\image-20200117164630141.png" alt="image-20200117164630141" style="zoom: 67%;" />
+<img src="..\images\image-20200117164630141.png" alt="image-20200117164630141" style="zoom: 67%;" />
 
 > - 用数组接收表示对接收的数据不做任何修改
 > - 如果要对传入的数据进行筛选,就需要用到对象格式
@@ -145,9 +145,9 @@ let son = {
             }
 ```
 
-<img src="F:\learn Vue\images\image-20200117170326495.png" alt="image-20200117170326495" style="zoom:67%;" />
+<img src="..\images\image-20200117170326495.png" alt="image-20200117170326495" style="zoom:67%;" />
 
-![image-20200117170336183](F:\learn Vue\images\image-20200117170336183.png)
+![image-20200117170336183](..\images\image-20200117170336183.png)
 
 > 数据虽然还有, 但是报错了, 第一条数据不符合格式
 
@@ -155,11 +155,11 @@ let son = {
 >
 > - default>>>当没有传递数据时生效, 可以当成默认传递的数据
 >
-> ![image-20200117170905481](F:\learn Vue\images\image-20200117170905481.png)
+> ![image-20200117170905481](..\images\image-20200117170905481.png)
 >
 > -  required: true>>>表示必须要传, 不传报错
 >
-> ![image-20200117171901148](F:\learn Vue\images\image-20200117171901148.png)
+> ![image-20200117171901148](..\images\image-20200117171901148.png)
 >
 > `type>>>type可以规定传入的值是哪一种类型或者是那些类型, 两种及其以上就要用数组规定: type:[String,Number]`
 >
@@ -172,11 +172,11 @@ let son = {
 >                     }
 > ```
 >
-> ![image-20200117174122698](F:\learn Vue\images\image-20200117174122698.png)
+> ![image-20200117174122698](..\images\image-20200117174122698.png)
 >
 > 程序报错,但是数据仍然传过来了
 >
-> ![image-20200117174205600](F:\learn Vue\images\image-20200117174205600.png)
+> ![image-20200117174205600](..\images\image-20200117174205600.png)
 >
 > emmm......只能解释为父爱真伟大了,就算是错的也要给
 
@@ -237,7 +237,7 @@ let son = {
 
 > 点击一次按钮
 
-![image-20200117194530659](F:\learn Vue\images\image-20200117194530659.png)
+![image-20200117194530659](..\images\image-20200117194530659.png)
 
 ##### 8.5 全局组件和局部组件
 
@@ -267,7 +267,7 @@ let son = {
     </script>
 ```
 
-![image-20200203163937072](F:\learn Vue\images\image-20200203163937072.png)
+![image-20200203163937072](..\images\image-20200203163937072.png)
 
 > 把全局组件放在`new Vue()`的后面就会出现这个报错
 
@@ -282,7 +282,7 @@ let son = {
 
 > 父组件没有挂载子组件, 子组件也可以使用
 
-![image-20200117200031813](F:\learn Vue\images\image-20200117200031813.png)
+![image-20200117200031813](..\images\image-20200117200031813.png)
 
 ##### 8.6  组件注册之组件名称要求
 
@@ -311,21 +311,21 @@ let son = {
 
 > 定义三个组件模板
 
-<img src="F:\前端开发\learn canvas\images\image-20200121221154519.png" alt="image-20200121221154519" style="zoom:80%;" />
+<img src="..\images\image-20200121221154519.png" alt="image-20200121221154519" style="zoom:80%;" />
 
 > 实例化并且挂载组件模板
 
-<img src="F:\前端开发\learn canvas\images\image-20200121221253317.png" alt="image-20200121221253317" style="zoom:80%;" />
+![](..\images\image-20200121221154519.png)
 
 > 设置数据, 完成切换的事件处理函数, 之所以写在computed属性里面是因为每个组件名前要加 `tab-` 前缀
 
-<img src="F:\前端开发\learn canvas\images\image-20200121221517960.png" alt="image-20200121221517960" style="zoom:80%;" />
+<img src="..\images\image-20200121221517960.png" alt="image-20200121221517960" style="zoom:80%;" />
 
 > 完成动态组件的绑定
 
-![image-20200121221707362](F:\前端开发\learn canvas\images\image-20200121221707362.png)
+![image-20200121221707362](..\images\image-20200121221707362.png)
 
 > 效果: 
 
-![](F:\learn Vue\images\选项卡.gif)
+![](..\images\选项卡.gif)
 

@@ -16,21 +16,21 @@
 >
 > 现在可以按照下面两条提示指令进入和开启本地服务器 >>>
 >
-> ![image-20200213170120656](F:\learn Vue\images\image-20200213170120656.png)
+> ![image-20200213170120656](..\images\image-20200213170120656.png)
 >
-> ![image-20200213170425089](F:\learn Vue\images\image-20200213170425089.png)
+> ![image-20200213170425089](..\images\image-20200213170425089.png)
 >
 > 基本的目录结构 >>>
 >
-> ![image-20200213170040462](F:\learn Vue\images\image-20200213170040462.png)
+> ![image-20200213170040462](..\images\image-20200213170040462.png)
 >
 > 基本的依赖 >>>
 >
-> ![image-20200213164118828](F:\learn Vue\images\image-20200213164118828.png)
+> ![image-20200213164118828](..\images\image-20200213164118828.png)
 >
 > 基本的映射指令 >>>
 >
-> ![image-20200213170152968](F:\learn Vue\images\image-20200213170152968.png)
+> ![image-20200213170152968](..\images\image-20200213170152968.png)
 >
 > Vue-cli的核心理念就是, 对于那些不懂webpack的人来说,Vue-cli就直接把所有的webpack的配置都给隐藏起来, 就暴露一些比较简单的接口, 以减少用户的使用难度
 
@@ -42,7 +42,7 @@
 >
 > 基本的配置信息 >>>
 >
-> ![image-20200213165225759](F:\learn Vue\images\image-20200213165225759.png)
+> ![image-20200213165225759](..\images\image-20200213165225759.png)
 
 ##### 30.2 publicPath
 
@@ -55,11 +55,11 @@
 >
 > 配置前的端口 >>>
 >
-> ![image-20200213171000797](F:\learn Vue\images\image-20200213171000797.png)
+> ![image-20200213171000797](..\images\image-20200213171000797.png)
 >
 > 配置后的端口 >>>
 >
-> ![image-20200213171113264](F:\learn Vue\images\image-20200213171113264.png)
+> ![image-20200213171113264](..\images\image-20200213171113264.png)
 
 ##### 30.3 outputDir
 
@@ -70,9 +70,9 @@
 >
 > 注意目标目录在构建之前会被清除 (构建时传入 --no-clean 可关闭该行为)。
 >
-> ![image-20200213172344360](F:\learn Vue\images\image-20200213172344360.png)
+> ![image-20200213172344360](..\images\image-20200213172344360.png)
 >
-> ![image-20200213172400428](F:\learn Vue\images\image-20200213172400428.png)
+> ![image-20200213172400428](..\images\image-20200213172400428.png)
 
 ##### 30.4 assetsDir/indexPath/filenameHashing
 
@@ -82,7 +82,7 @@
 >
 > assetsDir:放置生成的静态资源 (js、css、img、fonts) 的 (相对于 outputDir 的) 目录
 >
-> ![image-20200213200139659](F:\learn Vue\images\image-20200213200139659.png)
+> ![image-20200213200139659](..\images\image-20200213200139659.png)
 >
 > - key: indexPath
 > - Type: string
@@ -90,7 +90,7 @@
 >
 > indexPath:指定生成的 index.html 的输出路径 (相对于 outputDir)
 >
-> ![image-20200213200352588](F:\learn Vue\images\image-20200213200352588.png)
+> ![image-20200213200352588](..\images\image-20200213200352588.png)
 >
 > - key: filenameHashing
 > - Type: boolean
@@ -98,7 +98,7 @@
 >
 > filenameHashing:生成的静态资源后面是否生成加上哈希值 , 默认为true
 >
-> ![image-20200213200424524](F:\learn Vue\images\image-20200213200424524.png)
+> ![image-20200213200424524](..\images\image-20200213200424524.png)
 
 ##### 30.5 pages(多页面打包)
 
@@ -112,19 +112,19 @@
 >
 > 配置 >>>
 >
-> ![image-20200213205008092](F:\learn Vue\images\image-20200213205008092.png)
+> ![image-20200213205008092](..\images\image-20200213205008092.png)
 >
-> ![image-20200213203530660](F:\learn Vue\images\image-20200213203530660.png)
+> ![image-20200213203530660](..\images\image-20200213203530660.png)
 >
 > 在page里面的filename和page外面的indexPath同时存在的情况下 , filename生效
 >
-> ![image-20200213204917005](F:\learn Vue\images\image-20200213204917005.png)
+> ![image-20200213204917005](..\images\image-20200213204917005.png)
 
 ##### 30.6 css
 
 > Vue-cli里面对css的操作基本独立了出来,将各种各样的基本配置给进行了简化,这给我们的日常开发极大的减轻了负担
 >
-> <img src="F:\learn Vue\images\image-20200213205820066.png" alt="image-20200213205820066" style="zoom:80%;" />
+> <img src="..\images\image-20200213205820066.png" alt="image-20200213205820066" style="zoom:80%;" />
 
 ##### 30.7 devServer
 
@@ -138,12 +138,5 @@
 >
 > 如果你的前端应用和后端 API 服务器没有运行在同一个主机上，你需要在开发环境下将 API 请求代理到 API 服务器。这个问题可以通过 vue.config.js 中的 devServer.proxy 选项来配置
 >
-> ![image-20200213210849298](F:\learn Vue\images\image-20200213210849298.png)
+> ![image-20200213210849298](..\images\image-20200213210849298.png)
 
-##### 30.8 补充配置
-
-> 当vue-cli给你提供的接口不能满足你的需要时 , 他还给了你一个比较柔性的接口 , 让你可以像配置webpack那样写原生配置
->
-> ![image-20200213211652980](F:\learn Vue\images\image-20200213211652980.png)
->
-> 这里面你可以写一切原生的配置

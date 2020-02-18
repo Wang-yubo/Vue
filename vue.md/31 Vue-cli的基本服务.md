@@ -2,7 +2,7 @@
 
 ##### 31.1 运行指令serve
 
-> ![image-20200213212914363](F:\learn Vue\images\image-20200213212914363.png)
+> ![image-20200213212914363](..\images\image-20200213212914363.png)
 >
 > - vue-cli-service serve 命令会启动一个开发服务器 (基于 webpack-dev-server) 并附带开箱即用的模块热重载 (Hot-Module-Replacement)。
 >
@@ -10,7 +10,7 @@
 >
 > - 命令行参数 [entry] 将被指定为唯一入口，而非额外的追加入口。尝试使用 [entry] 覆盖 config.pages 中的 entry 将可能引发错误。
 >
->   ![image-20200213213301224](F:\learn Vue\images\image-20200213213301224.png)
+>   ![image-20200213213301224](..\images\image-20200213213301224.png)
 >
 >   serve后面可指定的选项
 >
@@ -25,9 +25,9 @@
 >
 >   --port写端口号这里我不知道怎么写 , 换种替代方式
 >
->   ![image-20200213215839707](F:\learn Vue\images\image-20200213215839707.png)
+>   ![image-20200213215839707](..\images\image-20200213215839707.png)
 >
->   ![image-20200213215849986](F:\learn Vue\images\image-20200213215849986.png)
+>   ![image-20200213215849986](..\images\image-20200213215849986.png)
 
 ##### 31.2 运行指令build
 
@@ -48,7 +48,24 @@
 > | --report-json | 生成report.json 以帮助分析包内容                             |
 > | --watch       | 监听文件变化                                                 |
 >
-> ![image-20200213221224769](F:\learn Vue\images\image-20200213221224769.png)
+> ![image-20200213221224769](..\images\image-20200213221224769.png)
 >
-> ![image-20200213221250160](F:\learn Vue\images\image-20200213221250160.png)
+> ![image-20200213221250160](..\images\image-20200213221250160.png)
+
+##### 31.3 webpack相关
+
+> 调整 webpack 配置最简单的方式就是在 vue.config.js 中的 configureWebpack 选项提供一个对象：
+>
+> ![image-20200213211652980](..\images\image-20200213211652980.png)
+>
+> 该对象将会被webpack-merge合并入最终的webpack配置
+>
+> 注意!!! : 有些webpack选项是基于vue.config.js中的值设置的 , 所以不能直接修改 , 例如你应该修改vue.config.js 中的 outputDir 选项而不是修改 output.path；你应该修改 vue.config.js 中的 publicPath 选项而不是修改 output.publicPath。这样做是因为 vue.config.js 中的值会被用在配置里的多个地方，以确保所有的部分都能正常工作在一起。
+>
+> 
+>
+> 如果需要基于环境有条件地配置行为，或者想要直接修改配置，那就换成一个函数 (该函数会在环境变量被设置之后懒执行)。该方法的第一个参数会收到已经解析好的配置。在函数内，可以直接修改配置，或者返回一个将会被合并的对象：
+>
+> ![image-20200214145849074](..\images\image-20200214145849074.png)
+>
 

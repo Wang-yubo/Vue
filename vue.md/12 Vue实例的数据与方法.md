@@ -29,7 +29,7 @@ let data = {
         })
 ```
 
-![image-20200128214529588](F:\learn Vue\images\image-20200128214529588.png)
+![image-20200128214529588](..\images\image-20200128214529588.png)
 
 > `observer`观察者
 >
@@ -52,7 +52,7 @@ let data = {
     </script>
 ```
 
-![image-20200128215509938](F:\learn Vue\images\image-20200128215509938.png)
+![image-20200128215509938](..\images\image-20200128215509938.png)
 
 ##### 12.02 Vue的实例属性之props
 
@@ -97,7 +97,7 @@ let data = {
         })
 ```
 
-<img src="F:\learn Vue\images\image-20200129143111701.png" alt="image-20200129143111701" style="zoom:80%;" />
+<img src="..\images\image-20200129143111701.png" alt="image-20200129143111701" style="zoom:80%;" />
 
 > 用的很少 , 不建议使用
 
@@ -128,7 +128,7 @@ let data = {
         })
 ```
 
-![image-20200129145258672](F:\learn Vue\images\image-20200129145258672.png)
+![image-20200129145258672](..\images\image-20200129145258672.png)
 
 > 复杂版的, 第一个参数为函数 : 第一个函数里面监听两个值的变化 , 任意一个值发生改变都会触发第二个函数
 
@@ -140,7 +140,7 @@ let data = {
         })
 ```
 
-![image-20200129150224498](F:\learn Vue\images\image-20200129150224498.png)
+![image-20200129150224498](..\images\image-20200129150224498.png)
 
 > 在实例外面用vm.$watch()会返回一个函数 , 这个函数是取消观察的函数 , 运行一下它 , 这个观察就会被取消掉
 
@@ -152,7 +152,7 @@ let data = {
         })
 ```
 
-![image-20200129152727704](F:\learn Vue\images\image-20200129152727704.png)
+![image-20200129152727704](..\images\image-20200129152727704.png)
 
 > watch的选项 : deep
 >
@@ -178,7 +178,7 @@ let vm = new Vue({
         }, )
 ```
 
-![image-20200129191553724](F:\learn Vue\images\image-20200129191553724.png)
+![image-20200129191553724](..\images\image-20200129191553724.png)
 
 > 加上`deep : true`后 :
 
@@ -190,7 +190,7 @@ let vm = new Vue({
         })
 ```
 
-![image-20200129191659697](F:\learn Vue\images\image-20200129191659697.png)
+![image-20200129191659697](..\images\image-20200129191659697.png)
 
 >  当然 , 如果你不想监听整个对象 , 而是只监听对象里面某个值的改变也可以不加deep : true , 也能监听到
 
@@ -200,7 +200,7 @@ let fn = vm.$watch("msg.msg1", function(newName, oldName) {
         }, )
 ```
 
-![image-20200129191933460](F:\learn Vue\images\image-20200129191933460.png)
+![image-20200129191933460](..\images\image-20200129191933460.png)
 
 > watch的选项`immediate`
 >
@@ -215,7 +215,7 @@ let fn = vm.$watch("msg.msg1", function(newName, oldName) {
         })
 ```
 
-![image-20200129192937907](F:\learn Vue\images\image-20200129192937907.png)
+![image-20200129192937907](..\images\image-20200129192937907.png)
 
 > Vue挂载的时候就执行了一次回调函数
 >
@@ -235,7 +235,7 @@ let fn = vm.$watch("msg.msg1", function(newName, oldName) {
         })
 ```
 
-![image-20200129194022906](F:\learn Vue\images\image-20200129194022906.png)
+![image-20200129194022906](..\images\image-20200129194022906.png)
 
 > 但是 , 在有`immediate : true` 这个选项时不能这样做
 
@@ -249,7 +249,7 @@ let fn = vm.$watch("msg", function(newName, oldName) {
         })
 ```
 
-![image-20200129193839187](F:\learn Vue\images\image-20200129193839187.png)
+![image-20200129193839187](..\images\image-20200129193839187.png)
 
 > 原因很简单 : 初次刷新的时候就被解绑了 , 那监听还有什么意义
 
@@ -261,13 +261,13 @@ let fn = vm.$watch("msg", function(newName, oldName) {
 
 
 
-![image-20200129202002891](F:\learn Vue\images\image-20200129202002891.png)
+![image-20200129202002891](..\images\image-20200129202002891.png)
 
 > 这里报错的原因在于这个方法不会默认直接找到vm实例里的msg
 >
 > 默认前缀用`vm.msg`或者`vm.$data.msg`都可以
 >
-> ![image-20200129202629200](F:\learn Vue\images\image-20200129202629200.png)
+> ![image-20200129202629200](..\images\image-20200129202629200.png)
 
 > vm.$delete ( target , propertyName/index )
 >
@@ -275,8 +275,6 @@ let fn = vm.$watch("msg", function(newName, oldName) {
 
 ##### 12.08 Vue的实例方法之on监听自定义事件
 
-> 
->
 > vm.$on( eventName , callback)
 >
 > 监听当前实例上的自定义事件 . 事件可以由vm.$emit . 回调函数会接收所以传

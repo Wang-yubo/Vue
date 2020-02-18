@@ -27,15 +27,15 @@
 > 一个Vue动画中通常包括三个部分
 >
 > Vue部分: 就一个控制开关
-> ![image-20200122163224568](F:\learn Vue\images\image-20200122163224568.png)
+> ![image-20200122163224568](..\images\image-20200122163224568.png)
 >
 > HTML部分: transition模板和name不能少
 >
-> ![image-20200122163309891](F:\learn Vue\images\image-20200122163309891.png)
+> ![image-20200122163309891](..\images\image-20200122163309891.png)
 >
 > css部分: 定义动画过程和开始/结束状态
 >
-> ![image-20200122163608060](F:\learn Vue\images\image-20200122163608060.png)
+> ![image-20200122163608060](..\images\image-20200122163608060.png)
 
 > 另外, 主动式动画可以不写enter-to 和 leave-to 的动画, 因为这在主动式动画里已经定义了第一帧和最后一帧
 >
@@ -52,7 +52,7 @@
         </transition>
 ```
 
-![image-20200127143714069](C:\Users\王雨波\AppData\Roaming\Typora\typora-user-images\image-20200127143714069.png)
+![image-20200127143714069](..\images\image-20200127143714069.png)
 
 > 想要有动画效果有两种办法:
 >
@@ -65,7 +65,7 @@
         </transition>
 ```
 
-<img src="F:\learn Vue\images\不同标签.gif" style="zoom:80%;" />
+<img src="..\images\不同标签.gif" style="zoom:80%;" />
 
 > 这样虽然有效果, 但是不满足同名标签也要有效果的需求
 
@@ -78,7 +78,7 @@
         </transition>
 ```
 
-> <img src="F:\learn Vue\images\同时存在.gif" style="zoom:80%;" />
+> <img src="..\images\同时存在.gif" style="zoom:80%;" />
 >
 > 但是, 这样的多个元素的显示效果之间的过渡, 是存在一个重叠的时间的: 上一个元素的消失和下一个元素的显示, 这两个动画是同步进行的, 所以看上去像是有两个元素都显示出来了
 
@@ -93,7 +93,7 @@
 <transition name="fade" enter-active-class="animated bounceIn" leave-active-class="animated bounceOut" mode="out-in">
 ```
 
-<img src="F:\learn Vue\images\过渡模式.gif" style="zoom:80%;" />
+<img src="..\images\过渡模式.gif" style="zoom:80%;" />
 
 ##### 11.3 多个组件的过渡
 
@@ -153,7 +153,7 @@
         </transition-group>
 ```
 
-![image-20200128154035070](F:\learn Vue\images\image-20200128154035070.png)
+![image-20200128154035070](..\images\image-20200128154035070.png)
 
 > 使用key, 但没有动态绑定时, 也会报错, 所以这里的key还要动态绑定
 
@@ -161,17 +161,17 @@
  <li v-for="item of items" key="item">{{item}}</li>
 ```
 
-![image-20200128154319846](F:\learn Vue\images\image-20200128154319846.png)
+![image-20200128154319846](..\images\image-20200128154319846.png)
 
 > 乱序排列过渡的例子 :
 
-![image-20200128160641424](F:\learn Vue\images\image-20200128160641424.png)
+![image-20200128160641424](..\images\image-20200128160641424.png)
 
-<img src="F:\learn Vue\images\image-20200128160726186.png" alt="image-20200128160726186" style="zoom:80%;" />
+<img src="..\images\image-20200128160726186.png" alt="image-20200128160726186"  />
 
 > 实现的效果 : 
 
-<img src="F:\learn Vue\images\乱序排列.gif" style="zoom:80%;" />
+<img src="..\images\乱序排列.gif" style="zoom:80%;" />
 
 ##### 11.5 数据的过渡
 
@@ -188,5 +188,5 @@
 >
 > https://www.tweenmax.com.cn/
 
-![image-20200128162646884](F:\learn Vue\images\image-20200128162646884.png)
+![image-20200128162646884](..\images\image-20200128162646884.png)
 

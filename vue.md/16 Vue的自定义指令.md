@@ -13,21 +13,21 @@
 > - [x] componentUpdataed : 指令所在组件的VNode 及其子VNode 全部更新后调用
 > - [x] unbind : 只调用一次 , 指令与元素解绑时调用
 
-![image-20200202141837923](F:\learn Vue\images\image-20200202141837923.png)
+![image-20200202141837923](..\images\image-20200202141837923.png)
 
-![image-20200202142019533](F:\learn Vue\images\image-20200202142019533.png)
+![image-20200202142019533](..\images\image-20200202142019533.png)
 
 > 挂载并查看他在生命周期中的出现时机
 
-![image-20200202142045166](F:\learn Vue\images\image-20200202142045166.png)
+![image-20200202142045166](..\images\image-20200202142045166.png)
 
-![image-20200202142249277](F:\learn Vue\images\image-20200202142249277.png)
+![image-20200202142249277](..\images\image-20200202142249277.png)
 
 > 从结果可以看出`bind`和`inserted`是在`beforeMount`阶段被解析的
 
-![image-20200202143522484](F:\learn Vue\images\image-20200202143522484.png)
+![image-20200202143522484](..\images\image-20200202143522484.png)
 
-![image-20200202143427756](F:\learn Vue\images\image-20200202143427756.png)
+![image-20200202143427756](..\images\image-20200202143427756.png)
 
 > `update`和`componentUpdated`发生在`beforeUpdata`阶段
 
@@ -35,7 +35,7 @@
 
 > 如果想注册局部指令，组件中也接受一个 `directives` 的选项
 
-![image-20200202144408059](F:\learn Vue\images\image-20200202144408059.png)
+![image-20200202144408059](..\images\image-20200202144408059.png)
 
 ##### 16.3 vue的自定义指令的钩子函数参数
 
@@ -54,9 +54,9 @@
 > - `vnode`>>>vue编译生成的虚拟节点
 > - `oldVnode`>>>上一个虚拟节点 , 仅在`updata`和`componentUpdated`钩子中可用
 
-![image-20200202151949641](F:\learn Vue\images\image-20200202151949641.png)
+![image-20200202151949641](..\images\image-20200202151949641.png)
 
-![image-20200202152439405](F:\learn Vue\images\image-20200202152439405.png)
+![image-20200202152439405](..\images\image-20200202152439405.png)
 
 > 重点看下binding里面的值 : 先看看指令里的表达式
 
@@ -64,7 +64,7 @@
 template: `<p v-yuanliangta="1+1"> {{message}}</p>`
 ```
 
-![image-20200202153453509](F:\learn Vue\images\image-20200202153453509.png)
+![image-20200202153453509](..\images\image-20200202153453509.png)
 
 > 带参数的指令
 
@@ -72,7 +72,7 @@ template: `<p v-yuanliangta="1+1"> {{message}}</p>`
 template: `<p v-yuanliangta:girlfriends="1+1"> {{message}}</p>`,
 ```
 
-![image-20200202155415169](F:\learn Vue\images\image-20200202155415169.png)
+![image-20200202155415169](..\images\image-20200202155415169.png)
 
 > 带参数且带修饰符的指令 , 修饰符还可以加多个
 
@@ -80,7 +80,7 @@ template: `<p v-yuanliangta:girlfriends="1+1"> {{message}}</p>`,
 template: `<p v-yuanliangta:girlfriends.mostyoung="1+1"> {{message}}</p>`,
 ```
 
-![image-20200202155804092](F:\learn Vue\images\image-20200202155804092.png)
+![image-20200202155804092](..\images\image-20200202155804092.png)
 
 > 注意 :
 >

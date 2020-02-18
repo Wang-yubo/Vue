@@ -32,11 +32,11 @@
     </script>
 ```
 
-![image-20200115203953658](F:\learn Vue\images\image-20200115203953658.png)
+![image-20200115203953658](..\images\image-20200115203953658.png)
 
 > 在控制台改改数据：
 
-![image-20200115204042409](F:\learn Vue\images\image-20200115204042409.png)
+![image-20200115204042409](..\images\image-20200115204042409.png)
 
 > 图片直接变了
 
@@ -46,16 +46,16 @@
  <img v-bind:class="{active:isShow}" v-bind:src="imgs[0].src">
 ```
 
-![image-20200115205256422](F:\learn Vue\images\image-20200115205256422.png)
+![image-20200115205256422](..\images\image-20200115205256422.png)
 
 > 将isShow的值改为fasle
 
-![image-20200115205530465](F:\learn Vue\images\image-20200115205530465.png)
+<img src="..\images\image-20200115205530465.png" alt="image-20200115205530465"  />
 
 > 此时，img标签里面的类名便没有了
 >
 
-![image-20200115205548725](F:\learn Vue\images\image-20200115205548725.png)
+![image-20200115205548725](..\images\image-20200115205548725.png)
 
 > `v-bind：class="classObject"`,这里面的`classObject`如果是个对象，他会按照对象的模式来解析，如果`classObject`是个数组的话，他会把单个数组的返回值当做类名，如果返回值是个string，那string直接设置为类名，如果返回值还是一个对象的话，那么它会按照最开始解析对象那样再对对象进行一次深度解析，从而得到里面的string返回值，然后才把string设置为类名。
 
@@ -65,7 +65,7 @@
  <img v-bind:class="{active:isShow}" class="wangyubo" v-bind:src="imgs[0].src">
 ```
 
-![image-20200115212443064](F:\learn Vue\images\image-20200115212443064.png)
+![image-20200115212443064](..\images\image-20200115212443064.png)
 
 > 这样设置的好处在于可以通过手动添加类型增加一个标准模板，然后通过动态类名来变化
 
@@ -89,9 +89,9 @@
     </script>
 ```
 
-![image-20200115214721819](F:\learn Vue\images\image-20200115214721819.png)
+![image-20200115214721819](..\images\image-20200115214721819.png)
 
-![image-20200115214743456](F:\learn Vue\images\image-20200115214743456.png)
+![image-20200115214743456](..\images\image-20200115214743456.png)
 
 > 如果有多个`cssData`这样的对象：
 
@@ -112,5 +112,5 @@ data: {
 <p v-bind:style="[cssData,cssData2]">王雨波</p>
 ```
 
-![image-20200115215537018](F:\learn Vue\images\image-20200115215537018.png)
+![image-20200115215537018](..\images\image-20200115215537018.png)
 
